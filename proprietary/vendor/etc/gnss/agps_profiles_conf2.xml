@@ -977,7 +977,7 @@
     up_lppe_enable="false"
     esupl_apn_mode="0"
     tcp_keepalive="4"
-    aosp_profile_enable="false"
+    aosp_profile_enable="true"
     bind_nlp_setting_to_supl="true"
     up_lppe_wlan_enable="false"
     up_lppe_srn_enable="false"
