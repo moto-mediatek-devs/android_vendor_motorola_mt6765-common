@@ -1288,6 +1288,7 @@ cc_prebuilt_library_shared {
                 "libion",
                 "libion_mtk",
                 "liblog",
+                "libdmabufheap",
                 "libmtk_drvb",
                 "libc++",
                 "libc",
@@ -1305,6 +1306,7 @@ cc_prebuilt_library_shared {
                 "libion",
                 "libion_mtk",
                 "liblog",
+                "libdmabufheap",
                 "libmtk_drvb",
                 "libc++",
                 "libc",
@@ -2622,31 +2624,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libgamehdr",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libgamehdr.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libh264dec_customize",
     owner: "motorola",
     strip: {
@@ -2771,7 +2748,6 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "liblog",
                 "libvcodec_oal",
-                "libvcodec_utility",
                 "libc++",
                 "libdl",
                 "libc",
@@ -2781,31 +2757,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "32",
     check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libhdrvideo",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libhdrvideo.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
@@ -2822,10 +2773,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/libhevce_sb.ca7.android.so",
             ],
             shared_libs: [
-                "libcutils",
                 "liblog",
                 "libvcodec_oal",
-                "libvcodec_utility",
                 "libc",
                 "libm",
             ],
@@ -2906,6 +2855,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
+                "libvcodec_utility",
                 "libvcodec_oal",
                 "libc++",
                 "libdl",
@@ -3281,35 +3231,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libvc1dec_sa.ca7",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libvc1dec_sa.ca7.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libvcodec_oal",
-                "libvcodec_utility",
-                "libc++",
-                "libdl",
-                "libc",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    check_elf_files: false,
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libvcodecdrv",
     owner: "motorola",
     strip: {
@@ -3327,7 +3248,6 @@ cc_prebuilt_library_shared {
                 "libvcodec_oal",
                 "libmp4enc_sa.ca7",
                 "libvp8dec_sa.ca7",
-                "libvc1dec_sa.ca7",
                 "libion",
                 "libpowerhalwrap_vendor",
                 "libmtk_drvb",
@@ -5545,6 +5465,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "liboemcrypto",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liboemcrypto.so",
+            ],
+            shared_libs: [
+                "libc",
+                "liblog",
+                "libc++",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libpq_cust",
     owner: "motorola",
     strip: {
@@ -5862,6 +5807,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libtlcWidevineModularDrm",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libtlcWidevineModularDrm.so",
+            ],
+            shared_libs: [
+                "libTEECommon",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libion_mtk",
+                "libion",
+                "libdmabufheap",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libtrm",
     owner: "motorola",
     strip: {
@@ -5903,6 +5879,36 @@ cc_prebuilt_library_shared {
                 "libc++",
                 "libm",
                 "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liburee_meta_drmkeyinstall",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liburee_meta_drmkeyinstall.so",
+            ],
+            shared_libs: [
+                "libTEECommon",
+                "libcutils",
+                "libnetutils",
+                "liblog",
+                "libion",
+                "libion_mtk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
     },
@@ -6123,6 +6129,76 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwvhidl",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwvhidl.so",
+            ],
+            shared_libs: [
+                "android.hardware.drm@1.0",
+                "android.hardware.drm@1.1",
+                "android.hardware.drm@1.2",
+                "android.hardware.drm@1.3",
+                "android.hardware.drm@1.4",
+                "android.hidl.memory@1.0",
+                "libbase",
+                "libcrypto",
+                "libcutils",
+                "libhidlbase",
+                "libhidlmemory",
+                "liblog",
+                "libprotobuf-cpp-lite-3.9.1-vendorcompat",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwvdrmengine",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/mediadrm/libwvdrmengine.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libcrypto",
+                "libhidlbase",
+                "liblog",
+                "libprotobuf-cpp-lite-3.9.1-vendorcompat",
+                "libstagefright_foundation",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "mediadrm",
     prefer: true,
     soc_specific: true,
 }
@@ -7554,9 +7630,18 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_media_c2_V1_1_default.xml",
+    name: "manifest_android.hardware.drm@1.4-service.widevine.xml",
     owner: "motorola",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "manifest_media_c2_V1_2_default.xml",
+    owner: "motorola",
+    src: "proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -7803,6 +7888,42 @@ cc_prebuilt_binary {
                 "libcutils",
                 "libMcClient",
                 "com.motorola.hardware.biometric.fingerprint@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.drm@1.4-service.widevine",
+    owner: "motorola",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/android.hardware.drm@1.4-service.widevine",
+            ],
+            shared_libs: [
+                "android.hardware.drm@1.0",
+                "android.hardware.drm@1.1",
+                "android.hardware.drm@1.2",
+                "android.hardware.drm@1.3",
+                "libbase",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libbinder",
+                "android.hardware.drm@1.4",
+                "libwvhidl",
                 "libc++",
                 "libc",
                 "libm",

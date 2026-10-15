@@ -155,6 +155,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_nTelos.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_nTelos.xml \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-goodixservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-goodixservice.rc \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc \
+    vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.4-service.widevine.rc \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.gnss-service.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss-service.mediatek.rc \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc \
     vendor/motorola/mt6765-common/proprietary/vendor/etc/init/android.hardware.keymaster@4.1-service.trustonic.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.1-service.trustonic.rc \
@@ -312,13 +313,11 @@ PRODUCT_PACKAGES += \
     libcvsd_mtk \
     libfgauge_gm30 \
     libformatter_mtk \
-    libgamehdr \
     libh264dec_customize \
     libh264dec_sa.ca7 \
     libh264dec_sd.ca7 \
     libh264dec_se.ca7 \
     libh264enc_sa.ca7 \
-    libhdrvideo \
     libhevce_sb.ca7.android \
     libipsec_ims_shr \
     libmp3dec_mtk \
@@ -335,7 +334,6 @@ PRODUCT_PACKAGES += \
     libthermalalgo \
     libthha \
     libui-v31 \
-    libvc1dec_sa.ca7 \
     libvcodecdrv \
     libvolte_core_shr \
     libvolte_xdmc_shr \
@@ -411,6 +409,7 @@ PRODUCT_PACKAGES += \
     libmtksysutils \
     libmtktinyxml \
     libmtkutils \
+    liboemcrypto \
     libpq_cust \
     libpqframework \
     libpqparamparser \
@@ -422,8 +421,10 @@ PRODUCT_PACKAGES += \
     libstorage_otp \
     libstrongswan \
     libsysenv \
+    libtlcWidevineModularDrm \
     libtrm \
     libufwriter \
+    liburee_meta_drmkeyinstall \
     libusc \
     libutinterface_custom_md \
     libutinterface_md \
@@ -432,6 +433,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-mtk \
     libwo \
     libwpfa \
+    libwvhidl \
+    libwvdrmengine \
     motrilutils \
     vendor.goodix.hardware.biometrics.fingerprint@2.1 \
     vendor.mediatek.hardware.composer_ext@1.0 \
@@ -483,7 +486,8 @@ PRODUCT_PACKAGES += \
     gnss-mtk.xml \
     gnss@2.1-service.xml \
     lbs_hidl_service@1.0.xml \
-    manifest_media_c2_V1_1_default.xml \
+    manifest_android.hardware.drm@1.4-service.widevine.xml \
+    manifest_media_c2_V1_2_default.xml \
     capsense_reset \
     ccci_mdinit \
     ccci_rpcd \
@@ -493,6 +497,7 @@ PRODUCT_PACKAGES += \
     gsm0710muxd \
     android.hardware.biometrics.fingerprint@2.1-goodixservice \
     android.hardware.biometrics.fingerprint@2.1-service-fpc \
+    android.hardware.drm@1.4-service.widevine \
     android.hardware.gnss-service.mediatek \
     android.hardware.graphics.allocator@4.0-service-mediatek \
     android.hardware.keymaster@4.1-service.trustonic \
